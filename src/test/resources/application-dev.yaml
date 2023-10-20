@@ -1,0 +1,53 @@
+server:
+  servlet:
+    context-path: /api/read2/
+  port: ${PORT:8080}
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui/index.html
+
+spring:
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  mail:
+    host: smtp.com
+    port: 465
+    protocol: smtps
+    username:
+    password:
+
+  datasource:
+    url: jdbc:h2:mem:testdb;INIT=create schema if not exists client\;create schema if not exists post;MODE=LEGACY;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/schema.sql
+      data-locations: classpath:db/data.sql
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
+    hibernate:
+      ddl-auto: none
+
+app:
+  notificationComment: false
+  notificationSingUp: false
+  host: http
+
+jwt:
+  expiration: 1500
+
+qualifier:
+  allPostfix: First
