@@ -40,6 +40,8 @@ public interface PostMapper {
         return commentCount == null ? 0 : commentCount;
     }
 
+    PostResponseDto convertProjectionToDto(PostResponseProjection post);
+
     @Data
     @Builder
     @AllArgsConstructor
@@ -49,7 +51,5 @@ public interface PostMapper {
         Map<Long, Integer> postIdCommentCountMap;
         Map<Long, String> postIdVoteTypeMap;
     }
-
-    PostResponseDto convertProjectionToDto(PostResponseProjection post);
 
 }

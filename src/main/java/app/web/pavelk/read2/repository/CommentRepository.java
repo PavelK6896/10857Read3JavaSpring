@@ -4,13 +4,13 @@ package app.web.pavelk.read2.repository;
 import app.web.pavelk.read2.schema.Comment;
 import app.web.pavelk.read2.schema.Post;
 import app.web.pavelk.read2.schema.User;
+import jakarta.persistence.Tuple;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import javax.persistence.Tuple;
 import java.util.List;
 
 

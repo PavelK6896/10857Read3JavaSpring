@@ -1,19 +1,19 @@
 package app.web.pavelk.read2.schema;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Type;
 import org.springframework.security.core.GrantedAuthority;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.List;
 import java.util.Objects;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import static jakarta.persistence.GenerationType.IDENTITY;
 
 
 @Getter
@@ -52,15 +52,6 @@ public class User implements Serializable {
     @Type(type = "app.web.pavelk.read2.schema.type.CustomUserRoleListType")
     private List<User.Role> roles;
 
-    public enum Role implements GrantedAuthority {
-        USER, ADMIN;
-
-        @Override
-        public String getAuthority() {
-            return this.name();
-        }
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,5 +63,14 @@ public class User implements Serializable {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    public enum Role implements GrantedAuthority {
+        USER, ADMIN;
+
+        @Override
+        public String getAuthority() {
+            return this.name();
+        }
     }
 }

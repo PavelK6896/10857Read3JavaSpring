@@ -1,12 +1,11 @@
 package app.web.pavelk.read2.controller;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import javax.annotation.PostConstruct;
 
 @Slf4j(topic = "static-controller")
 @Controller

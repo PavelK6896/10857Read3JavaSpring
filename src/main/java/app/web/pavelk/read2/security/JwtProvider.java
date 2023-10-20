@@ -8,11 +8,11 @@ import app.web.pavelk.read2.exceptions.Read2Exception;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.*;
@@ -23,8 +23,8 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class JwtProvider {
 
-    private KeyStore keyStore;
     private final JwtProperties jwtProperties;
+    private KeyStore keyStore;
 
     @PostConstruct
     public void init() {

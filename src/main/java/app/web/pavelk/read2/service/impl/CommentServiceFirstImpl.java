@@ -12,6 +12,7 @@ import app.web.pavelk.read2.schema.User;
 import app.web.pavelk.read2.service.CommentService;
 import app.web.pavelk.read2.service.MailService;
 import app.web.pavelk.read2.service.UserService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,8 +21,6 @@ import org.springframework.data.domain.Slice;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 
 import static app.web.pavelk.read2.exceptions.ExceptionMessage.POST_NOT_FOUND;
 import static app.web.pavelk.read2.exceptions.ExceptionMessage.USER_NOT_FOUND;

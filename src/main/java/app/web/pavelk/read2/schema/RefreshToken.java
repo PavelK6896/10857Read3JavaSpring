@@ -1,9 +1,9 @@
 package app.web.pavelk.read2.schema;
 
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.*;
 import java.time.Instant;
 import java.util.Objects;
 

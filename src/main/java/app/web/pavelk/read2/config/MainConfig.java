@@ -26,6 +26,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MainConfig {
 
+    private final ApplicationContext applicationContext;
+    @Value("${qualifier.allPostfix:First}")
+    String allPostfix;
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
@@ -41,11 +45,6 @@ public class MainConfig {
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
         return urlBasedCorsConfigurationSource;
     }
-
-    private final ApplicationContext applicationContext;
-
-    @Value("${qualifier.allPostfix:First}")
-    String allPostfix;
 
     private String toLowerFirst(String qualifier) {
         return qualifier.substring(0, 1).toLowerCase() + qualifier.substring(1);

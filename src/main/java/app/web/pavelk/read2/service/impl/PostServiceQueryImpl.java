@@ -11,6 +11,7 @@ import app.web.pavelk.read2.repository.SubReadRepository;
 import app.web.pavelk.read2.schema.projection.PostResponseProjection;
 import app.web.pavelk.read2.service.PostService;
 import app.web.pavelk.read2.service.UserService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -19,7 +20,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 
 @Slf4j(topic = "post-service-query")

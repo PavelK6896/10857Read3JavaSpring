@@ -17,10 +17,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig {
 
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
     public static final String[] open_path_get = {"/sub-read/**", "/post/**", "/comment/**", "/main/**", "/", "/property"};
     public static final String[] swagger_path = {"/v3/api-docs/**", "/swagger-ui/**"};
     public static final String[] open_path = {"/auth/**"};
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {

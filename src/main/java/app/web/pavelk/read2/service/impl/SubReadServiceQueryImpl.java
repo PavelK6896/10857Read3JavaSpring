@@ -7,6 +7,7 @@ import app.web.pavelk.read2.repository.SubReadRepository;
 import app.web.pavelk.read2.schema.SubRead;
 import app.web.pavelk.read2.service.SubReadService;
 import app.web.pavelk.read2.service.UserService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -15,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.time.Instant;
 
 import static app.web.pavelk.read2.exceptions.ExceptionMessage.SUB_EXISTS;

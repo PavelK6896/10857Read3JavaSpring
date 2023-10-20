@@ -5,11 +5,11 @@ import app.web.pavelk.read2.schema.Post;
 import app.web.pavelk.read2.schema.User;
 import app.web.pavelk.read2.schema.Vote;
 import app.web.pavelk.read2.schema.VoteType;
+import jakarta.persistence.Tuple;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import javax.persistence.Tuple;
 import java.util.List;
 import java.util.Optional;
 
