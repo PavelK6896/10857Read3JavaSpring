@@ -48,9 +48,9 @@ public class User implements Serializable {
     @Column(name = "enabled")
     private boolean enabled;
 
-    @Column(name = "roles")
-    @Type(type = "app.web.pavelk.read2.schema.type.CustomUserRoleListType")
-    private List<User.Role> roles;
+//    @Column(name = "roles")
+//    @Type(type = "app.web.pavelk.read2.schema.type.CustomUserRoleListType")
+//    private List<User.Role> roles;
 
     @Override
     public boolean equals(Object o) {
