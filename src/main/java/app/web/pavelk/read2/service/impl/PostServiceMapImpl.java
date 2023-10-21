@@ -17,6 +17,7 @@ import app.web.pavelk.read2.service.PostService;
 import app.web.pavelk.read2.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -36,6 +37,7 @@ import static app.web.pavelk.read2.exceptions.ExceptionMessage.POST_NOT_FOUND;
 @Slf4j(topic = "post-service-map")
 @Service
 @RequiredArgsConstructor
+@ConditionalOnProperty(prefix = "qualifier.allPostfix", name = "Map")
 public class PostServiceMapImpl implements PostService {
 
     private final PostRepository postRepository;

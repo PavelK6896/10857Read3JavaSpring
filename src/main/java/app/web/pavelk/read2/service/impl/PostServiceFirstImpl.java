@@ -15,6 +15,7 @@ import app.web.pavelk.read2.service.PostService;
 import app.web.pavelk.read2.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -32,6 +33,7 @@ import static app.web.pavelk.read2.exceptions.ExceptionMessage.USER_NOT_FOUND;
 @Slf4j(topic = "post-service-first")
 @Service
 @RequiredArgsConstructor
+@ConditionalOnProperty(prefix = "qualifier.allPostfix", name = "First")
 public class PostServiceFirstImpl implements PostService {
 
     private final PostRepository postRepository;

@@ -11,6 +11,7 @@ import app.web.pavelk.read2.service.SubReadService;
 import app.web.pavelk.read2.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -25,6 +26,7 @@ import static app.web.pavelk.read2.exceptions.ExceptionMessage.SUB_EXISTS;
 @Slf4j
 @Service
 @RequiredArgsConstructor
+@ConditionalOnProperty(prefix = "qualifier.allPostfix", name = "First")
 public class SubReadServiceFirstImpl implements SubReadService {
 
     private final SubReadRepository subReadRepository;

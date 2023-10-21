@@ -1,0 +1,18 @@
+{
+  "resources": {
+    "includes": [
+      {
+        "pattern": "key.jks"
+      },
+      {
+        "pattern": "db/schema.sql"
+      },
+      {
+        "pattern": "db/data.sql"
+      },
+      {
+        "pattern": "static/main/index.html"
+      }
+    ]
+  }
+}

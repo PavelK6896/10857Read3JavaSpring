@@ -14,6 +14,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +28,7 @@ import static org.springframework.http.HttpStatus.OK;
 @Slf4j(topic = "comment-service-query")
 @Service
 @RequiredArgsConstructor
+@ConditionalOnProperty(prefix = "qualifier.allPostfix", name = "Query", matchIfMissing = true)
 public class CommentServiceQueryImpl implements CommentService {
 
     private final PostRepository postRepository;

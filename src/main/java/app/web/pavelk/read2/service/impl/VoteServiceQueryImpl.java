@@ -11,6 +11,7 @@ import app.web.pavelk.read2.service.UserService;
 import app.web.pavelk.read2.service.VoteService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 @Slf4j
 @Service
 @AllArgsConstructor
+@ConditionalOnProperty(prefix = "qualifier.allPostfix", name = "Query", matchIfMissing = true)
 public class VoteServiceQueryImpl implements VoteService {
 
     private final VoteRepository voteRepository;

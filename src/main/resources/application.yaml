@@ -59,8 +59,6 @@ jwt:
 
 qualifier:
   allPostfix: Query
-  post: PostServiceQueryImpl
-  comment: CommentServiceQueryImpl
 
 logging:
   pattern:
