@@ -21,5 +21,5 @@ ENV NAME_APP=read3
 COPY --from=gradle "/app-r/build/native/nativeCompile/$NAME_APP" read3-native
 CMD [ "sh", "-c", "./read3-native " ]
 
-# docker build --progress=plain -t r1-j87 -f read2.native.Dockerfile .
-# docker run --name j87 -p 8080:8080 -d r1-j87
+# docker build --progress=plain -t r1-j88 -f read2.native.Dockerfile .
+# docker run --name j87 -p 8080:8080 -d r1-j88
