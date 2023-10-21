@@ -43,14 +43,17 @@ public class User implements Serializable {
     private String email;
 
     @Column(name = "created")
-    private Instant created;
+    @Builder.Default
+    private Instant created = Instant.now();
 
     @Column(name = "enabled")
-    private boolean enabled;
+    @Builder.Default
+    private boolean enabled = false;
 
     @Column(name = "roles")
     @Convert(converter = RoleConverter.class)
-    private List<User.Role> roles;
+    @Builder.Default
+    private List<User.Role> roles = List.of(User.Role.USER);
 
     @Override
     public boolean equals(Object o) {
@@ -65,9 +68,7 @@ public class User implements Serializable {
         return getClass().hashCode();
     }
 
-    @Getter
-    @AllArgsConstructor
-    public enum Role implements GrantedAuthority, Serializable {
+    public enum Role implements GrantedAuthority {
         USER, ADMIN;
 
         @Override

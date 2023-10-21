@@ -29,7 +29,7 @@ public abstract class PostgresContainer {
                             "spring.datasource.url=" + "jdbc:postgresql://" + postgres.getHost() + ":" + postgres.getMappedPort(5432) + "/read2",
                             "spring.datasource.username=postgres",
                             "spring.datasource.password=postgres",
-                            "spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQL95Dialect")
+                            "spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect")
                     .applyTo(configurableApplicationContext.getEnvironment());
         }
     }

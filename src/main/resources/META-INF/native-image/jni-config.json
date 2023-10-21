@@ -1,6 +1,6 @@
 [
   {
-    "name": "app.web.pavelk.read2.schema.type.CustomUserRoleListType",
+    "name": "app.web.pavelk.read2.schema.converter.RoleConverter",
     "allDeclaredConstructors": true,
     "allPublicConstructors": true,
     "allDeclaredMethods": true,

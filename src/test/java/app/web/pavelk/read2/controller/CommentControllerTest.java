@@ -56,7 +56,7 @@ class CommentControllerTest extends TestCommonController {
                 .userName(username1)
                 .build();
 
-        mockMvc.perform(post("/comment/")
+        mockMvc.perform(post("/comment")
                         .content(objectMapper.writeValueAsString(commentsDto))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
@@ -73,7 +73,7 @@ class CommentControllerTest extends TestCommonController {
                 .userName(username2)
                 .build();
 
-        mockMvc.perform(post("/comment/")
+        mockMvc.perform(post("/comment")
                         .content(objectMapper.writeValueAsString(commentsDto))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
@@ -103,7 +103,7 @@ class CommentControllerTest extends TestCommonController {
                 .text("comment1")
                 .userName(username2)
                 .build();
-        mockMvc.perform(post("/comment/")
+        mockMvc.perform(post("/comment")
                         .content(objectMapper.writeValueAsString(comment1))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
