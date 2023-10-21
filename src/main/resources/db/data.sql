@@ -4,7 +4,7 @@ select '2021-01-30 10:25:57.953057',
        true,
        '{bcrypt}$2a$12$TaNWYCIOp60ypRbDgOpWTOmYgdK9c/zy3l8Bzk3yX1N0YOv6oYGMG',
        'Pavel',
-       '{USER,ADMIN}'
+       '["USER", "ADMIN"]'
 WHERE NOT EXISTS(
         SELECT id FROM client.users WHERE id = 1
     );
@@ -15,7 +15,7 @@ select '2021-01-30 10:25:57.953057',
        true,
        '{bcrypt}$2a$12$TaNWYCIOp60ypRbDgOpWTOmYgdK9c/zy3l8Bzk3yX1N0YOv6oYGMG',
        'admin',
-       ARRAY ['USER','ADMIN']
+       '["USER", "ADMIN"]'
 WHERE NOT EXISTS(
         SELECT id FROM client.users WHERE id = 2
     );

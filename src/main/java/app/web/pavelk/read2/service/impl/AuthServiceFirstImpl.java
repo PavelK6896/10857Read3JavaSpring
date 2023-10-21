@@ -77,7 +77,7 @@ public class AuthServiceFirstImpl implements AuthService {
         setUser.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
         setUser.setCreated(Instant.now());
         setUser.setEnabled(!appProperties.isNotificationSingUp());
-//        setUser.setRoles(List.of(User.Role.USER));
+        setUser.setRoles(List.of(User.Role.USER));
 
         userRepository.save(setUser);
         String token = generateVerificationToken(setUser);

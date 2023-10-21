@@ -1,11 +1,11 @@
 package app.web.pavelk.read2.schema;
 
+import app.web.pavelk.read2.schema.converter.RoleConverter;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import org.hibernate.Hibernate;
-import org.hibernate.annotations.Type;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.io.Serializable;
@@ -48,9 +48,9 @@ public class User implements Serializable {
     @Column(name = "enabled")
     private boolean enabled;
 
-//    @Column(name = "roles")
-//    @Type(type = "app.web.pavelk.read2.schema.type.CustomUserRoleListType")
-//    private List<User.Role> roles;
+    @Column(name = "roles")
+    @Convert(converter = RoleConverter.class)
+    private List<User.Role> roles;
 
     @Override
     public boolean equals(Object o) {
@@ -65,7 +65,9 @@ public class User implements Serializable {
         return getClass().hashCode();
     }
 
-    public enum Role implements GrantedAuthority {
+    @Getter
+    @AllArgsConstructor
+    public enum Role implements GrantedAuthority, Serializable {
         USER, ADMIN;
 
         @Override
