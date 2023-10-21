@@ -7,6 +7,7 @@ import app.web.pavelk.read2.dto.PostResponseDto;
 import app.web.pavelk.read2.dto.SubReadDto;
 import app.web.pavelk.read2.service.impl.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
@@ -20,7 +21,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.test.context.support.WithMockUser;
 
-
+@Disabled("Can't compare, current one sample")
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
 class ImplCompareTest extends PostgresContainer {

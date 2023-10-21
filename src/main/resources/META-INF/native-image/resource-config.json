@@ -9,9 +9,6 @@
       },
       {
         "pattern": "db/data.sql"
-      },
-      {
-        "pattern": "static/main/index.html"
       }
     ]
   }

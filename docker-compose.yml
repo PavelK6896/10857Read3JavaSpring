@@ -18,8 +18,8 @@ services:
   read2:
     image: 'r1-j88'
     container_name: read2
-#    environment:
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres14_read2:5432/read2
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres14_read2:5432/read2
     ports:
       - "8080:8080"
     networks:
