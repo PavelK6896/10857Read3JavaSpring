@@ -22,12 +22,12 @@ public class StaticController {
 
     @GetMapping("/")
     public String main() {
-        return "redirect:/main";
+        return "redirect:/main/index.html";
     }
 
-    @GetMapping({"/main"})
+    @GetMapping("/main/")
     public String homePage() {
-        return "/main/index.html";
+        return "redirect:/main/index.html";
     }
 
 }

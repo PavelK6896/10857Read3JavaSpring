@@ -50,7 +50,7 @@ public class JwtProvider {
                         Jwts.builder()
                                 .setClaims(claims)
                                 .setIssuedAt(java.sql.Timestamp.valueOf(localDateTimeNow))
-                                .signWith(SignatureAlgorithm.RS256, getPrivateKey())
+                                .signWith(getPrivateKey(), SignatureAlgorithm.RS256)
                                 .setExpiration(java.sql.Timestamp.valueOf(localDateTimeNowPlus))
                                 .compact()
                 )
@@ -75,8 +75,9 @@ public class JwtProvider {
     }
 
     public String getUsernameAndValidateJwt(String token) {
-        return Jwts.parser()
+        return Jwts.parserBuilder()
                 .setSigningKey(getPublicKey())
+                .build()
                 .parseClaimsJws(token)
                 .getBody()
                 .getSubject();

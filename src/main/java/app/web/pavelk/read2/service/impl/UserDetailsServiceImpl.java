@@ -55,7 +55,7 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
         try {
             return getUser().getId();
         } catch (Exception e) {
-            log.error(e.getMessage());
+            log.warn(e.getMessage());
             return null;
         }
     }
