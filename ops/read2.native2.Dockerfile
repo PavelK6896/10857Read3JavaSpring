@@ -58,5 +58,5 @@ CMD [ "sh", "-c", "./read3-native " ]
 
 # docker build --no-cache --progress=plain --build-arg deployBuild="https://bbafgaje26q1ffth08gm.containers.yandexcloud.net" -t r1-j904 -f ops/read2.native2.Dockerfile .
 # docker login --username oauth --password secret cr.yandex
-# docker image tag r1-j903 cr.yandex/crpbtkqol2ing4gt1s4p/r3:v4
-# docker push cr.yandex/crpbtkqol2ing4gt1s4p/r3:v4
+# docker image tag r1-j904 cr.yandex/crpbtkqol2ing4gt1s4p/r3:v5
+# docker push cr.yandex/crpbtkqol2ing4gt1s4p/r3:v5
